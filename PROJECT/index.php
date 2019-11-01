@@ -6,14 +6,24 @@
         <link rel="stylesheet" href="style.css">        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans+Condensed:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
     </head>
 
     <body>     
         <header>
-            <h1><a href="index.php"><i class="fas fa-globe-africa"></i> BOOK&GO</a></h1>
+            <h1><a href="index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
             <h2 id="login"><a href="login.php">Login</a></h2>
             <h2 id="signup"><a href="login.php">Signup</a></h2>
         </header>
+
+
+        <form method="post" action="action_search.php">
+            <input type="text" name="place" placeholder="Where to" required>
+            <input type="date" name="check_in" placeholder="check-in" required>
+            <input type="date" name="check_out" placeholder="check-out" required>
+            <input type="submit" value="Search">
+      </form>
+
 
         <section id = "Top_places">
 

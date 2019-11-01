@@ -15,6 +15,9 @@ body {
     --sans-font: 'Open Sans Condensed';
   
     background-color: var(--bg-color);
+    /* background-image: url("http://pureimg.com/public/uploads/large/241499098567zskatohcn7huh6yqgxesbq03encbxntys2shocuahw8yvfro7cswve2diootfpougxzz49ihdtjrzkqolhkc1vxtysqnj7kexdia.jpg")   ; */
+    background-image: url("https://images.wallpaperscraft.com/image/night_city_top_view_city_lights_119636_3840x2160.jpg")   ;
+    background-size: cover;
   }
 
   
@@ -25,14 +28,14 @@ a {
 
   body > header {
     display: grid;
+    border: 0.3em solid var(--main-color);
     grid-template-columns: 0.2fr 3fr 0.2fr;
-    grid-auto-rows: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr ;
     grid-template-areas: ". hd login"
                         ". hd signup";
     /* grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 1fr; */
-  
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 1em;
   
     font-size: 1em;
@@ -44,12 +47,13 @@ a {
   body > header h1 {
     /* margin: 0; */
     grid-area: hd;
+    font-size: 2.5em;
     /* flex-grow: 1; */
     /* grid-column-start: 2; */
     /* grid-row-end: 2; */
   }
   body > header h2#login{
-     margin-top: 0.7em;
+     margin-top: 1.5em;
     margin-bottom: 0;
     grid-area: login;
     font-size: 1em;
@@ -65,46 +69,105 @@ body > header h2#signup{
     font-family: var(--sans-font), sans-serif;
   }
 
-body > section#Top_places {
+  input[type=date] {
+    box-sizing: border-box;
+  
+    padding: 0.5em 0;
+  
+    border: 0;
+    border-bottom: 1px solid var(--light-color);
+  
+    background-color: var(--panel-color);
+}
+  
+input[type=text]{
+    box-sizing: border-box;
+  
+    padding: 0.6em 0;
+  
+    border: 0;
+    border-bottom: 1px solid var(--light-color);
+  
+    background-color: var(--panel-color);
+  }
+
+
+  input[type="submit"]{
+    padding: 0.2em 1.5em 0.6em 1.5em;
+  
+    background: var(--main-color);
+    color: var(--panel-color);
+  
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+  
+    border:none;
+    border-radius: 2px;
+  
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+ body > form{
+    width: 45%;
+      margin: auto;
+      border: 0;
+  }
+/*
+body > ul#Top_places {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr;
-    grid-template-rows: 4fr 4fr 4fr 4fr;
-    grid-template-areas:
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+ /*   grid-template-areas:
                          ". img1 p1 ."
                          ". img2 p2 ."
                          ". img3 p3 ."
                          ". img4 p4 .";
 
+}*/
+
+body > section#Top_places{
+    
+    width: 60%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    /*display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;*/
 }
 
-body > section#Top_places div#Barcelona img{
-    grid-area: img1;
+body > section#Top_places div{
+    margin: 4em;
+    border-radius: 1em;
+    border: 10px solid;
+    border-color: #333;
+    background-color: aliceblue;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 3fr 2fr 2fr;
 }
 
-body > section#Top_places div#Barcelona p:first{
-    grid-area: p1;
+img{
+    grid-row: span 2;
+    padding: 0;
+    width: 100%;
+    height: 140%;
+}
+p:last-child{
+    /* padding: 1em; */
+    margin: 0;
+    grid-column-start: 2;
 }
 
-
-body > section#Top_places div#Amsterdam img{
-    grid-area: img3;
+p:first-of-type{
+    padding: 1em;
+    margin-bottom: 0;
+    font-size: 1.5rem;
 }
 
-body > section#Top_places div#Amsterdam p:first{
-    grid-area: p3;
-}
-
-body > section#Top_places div#Paris img{
-    grid-area: img2;
-}
-body > section#Top_places div#Paris p:first{
-    grid-area: p2;
-}
-
-
-body > section#Top_places div#Lisbon img{
-    grid-area: img4;
-}
-body > section#Top_places div#Lisbon p:first{
-    grid-area: p4;
+p{
+    font-family: 'ZCOOL XiaoWei', serif;
 }
