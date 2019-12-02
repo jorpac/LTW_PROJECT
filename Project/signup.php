@@ -19,11 +19,11 @@
 
     <section id="signup">
         
-      <form method="post" action="log_action.php">
-        <input type="text" name="first_name" placeholder="First Name" required>
+      <form method="post" action="signup_action.php">
+        <input type="text" name="name" placeholder="First Name" required>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <input type="password" name="password" placeholder="Confirm Password" required>
+        <input type="password" name="xpassword" placeholder="Confirm Password" required>
         <input type="submit" value="Signup">
       </form>
   

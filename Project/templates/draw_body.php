@@ -1,5 +1,7 @@
 <?php
 function draw_main_page(){
+    include_once('Database/db_get_prop.php');
+    $Paris = getCity('Barcelona');
     ?>
   
   <form method="post" action="action_search.php">
@@ -21,7 +23,7 @@ function draw_main_page(){
         <div id="Paris">
             <img src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/newsletter/eiffel-tower-in-paris-151-medium.jpg?1564742900" alt="Paris Eifell tower view">
             <p>Paris</p>
-            <p>x properties available</p>
+            <p><?=$Paris?> properties available</p>
         </div>
 
         <div id = "Amsterdam">
@@ -41,4 +43,9 @@ function draw_main_page(){
 </html>
 <?php
 }
+
+function draw_user_body(){
+    
+}
+
 ?>

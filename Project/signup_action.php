@@ -5,11 +5,13 @@
   include_once('templates/draw_body.php');
   $username = $_POST['username'];
   $password = $_POST['password'];
-  if (logUser($username, $password)) {
+  $name = $_POST['name'];
+  
+  if (addUser($username, $password, $name)) {
     $_SESSION['username'] = $username;
     draw_header($username);
     draw_main_page();
   } else {
-    header('Location: login.php');
+    header('Location: signup.php');
   }
 ?>

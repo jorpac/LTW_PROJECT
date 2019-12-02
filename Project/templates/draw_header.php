@@ -15,9 +15,15 @@ function draw_header($username){
 
     <body>     
         <header>
-            <h1><a href="index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
+        <h1><a href="index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
+        <?php if($username == NULL) { ?>
             <h2 id="index_login"><a href="login.php">Login</a></h2>
             <h2 id="index_signup"><a href="signup.php">Signup</a></h2>
+        <?php } ?>
+        <?php if($username!=NULL){ ?>
+            <h2 id="index_login"><a href="user.php"><?=$username?></a></h2>
+            <h2 id="index_signup"><a href="logout.php">Logout</a></h2>
+        <?php } ?>
         </header>
 
 <?php
