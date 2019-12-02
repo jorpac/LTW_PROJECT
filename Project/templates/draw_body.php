@@ -1,7 +1,10 @@
 <?php
 function draw_main_page(){
     include_once('Database/db_get_prop.php');
-    $Paris = getCity('Barcelona');
+    $Barcelona = getCity('Barcelona');
+    $Lisbon = getCity('Lisbon');
+    $Paris = getCity('Paris');
+    $Amsterdam = getCity('Barcelona');
     ?>
   
   <form method="post" action="action_search.php">
@@ -17,7 +20,7 @@ function draw_main_page(){
         <div id ="Barcelona">
             <img src="https://cdn.descontos.pt/imgOfertas/deals/original/D36396i11.jpg" alt="Barcelona city">
             <p>Barcelona</p>
-            <p>x properties available</p>
+            <p><?=$Barcelona?> properties available</p>
         </div>
 
         <div id="Paris">
@@ -29,13 +32,13 @@ function draw_main_page(){
         <div id = "Amsterdam">
             <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/06/amsterdam-evening-canal-cruise.jpg" alt="Amsterdam">
             <p>Amsterdam</p>
-            <p>x properties available</p>
+            <p><?=$Amsterdam?> properties available</p>
         </div>
 
         <div id="Lisbon">
             <img src="https://www.lisbonguru.com/wp-content/uploads/2015/11/viewpoints-lisbon.jpg" alt="Lisbon">
                 <p>Lisbon</p>
-                <p>x properties available</p>
+                <p><?=$Lisbon?> properties available</p>
         </div>
 
         </section>
@@ -45,7 +48,11 @@ function draw_main_page(){
 }
 
 function draw_user_body(){
-    
+    ?>
+        <section id="Change data">
+            <h1 id= ><>
+
+    <?php
 }
 
 ?>
