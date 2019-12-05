@@ -24,7 +24,7 @@ CREATE TABLE comments (
 );
 
 INSERT INTO user VALUES( "simon-tlc","blabla","Simon Tollec");
-INSERT INTO user VALUES( "john","$2y$12$xDP8Rhv8W9QjBKkdBYY05u79gEPb/TkDL1FNgWbV/g0Z2.z6Bilrq","John");
+INSERT INTO user VALUES( "john","password","John");
 INSERT INTO user VALUES( "anthony","qwertyiop","Anthony");
 
 
