@@ -185,7 +185,7 @@ p{
   background-color: var(--panel-color);
 } 
 
-#login input, #signup input{
+#login input, #signup input, #house input{
   display: block;
   margin: 1em 0;
   width: 100%;
