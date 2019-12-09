@@ -1,12 +1,12 @@
 <?php
-  include_once('database.php');
+  include_once('../includes/database.php');
 
   function logUser($username, $password) {
     $db = Database::instance()->db();
     $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
     $stmt->execute(array($username));
     $user = $stmt->fetch();
-    if($user!=false && password_verify($password, $username['password'])){
+    if($user!=false && password_verify($password, $user['password'])){
         $_SESSION['username']= $username;
         return true;
     }

@@ -19,7 +19,6 @@ body {
     background-image: url("https://images.wallpaperscraft.com/image/night_city_top_view_city_lights_119636_3840x2160.jpg")   ;
     background-size: cover;
   }
-
   
 a {
     color: var(--main-color);
@@ -68,6 +67,8 @@ body > header h2#index_signup{
  body > header {
   font-family: 'McLaren', cursive;
 }
+
+
 
 input[type=date] {
   box-sizing: border-box;

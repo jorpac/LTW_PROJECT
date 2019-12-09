@@ -1,5 +1,5 @@
 <?php
-  include_once('database.php');
+  include_once('../includes/database.php');
 
   function getPlaces($city) {
     $db = Database::instance()->db();

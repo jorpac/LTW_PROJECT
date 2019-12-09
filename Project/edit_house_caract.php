@@ -5,13 +5,13 @@
 </SCRIPT>
 
 <?php
-  include_once('Database/db_user.php');
-  include_once('Database/db_house.php');
+  include_once('../Database/db_house.php');
   $title = $_POST['title'];
   $description = $_POST['description'];
   $price = $_POST['price'];
   $key=0;
-  if(changeHouseCaract($title,$price,$description,$key)){
+  $bool=changeHouseCaract($title,$price,$description,$key);
+  if($bool){
       $message="Changes saved successfully !";
       echo "<SCRIPT popup($message) </SCRIPT>";
     }
