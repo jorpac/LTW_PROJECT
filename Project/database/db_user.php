@@ -26,7 +26,18 @@
     return true;
     }
 
-    function logOut(){
-        
+    function getUserPass($username, $password){
+      $db = Database::instance()->db();
+      $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
+      $stmt->execute(array($username));
+      $pass= $stmt->fetch();
+      return password_verify($password, $pass['password']);
+    }
+
+    function updateUser($username, $new_username, $password){
+      $db = Database::instance()->db();
+      $stmt = $db->prepare('UDPATE user SET password=?, username=? WHERE username = ?');
+      $stmt->execute(array($password, $new_username, $username));
+      
     }
 ?>

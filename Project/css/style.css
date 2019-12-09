@@ -80,7 +80,7 @@ input[type=date] {
   background-color: var(--panel-color);
 }
   
-input[type=text]{
+input[type=text], input[type=password]{
   box-sizing: border-box;
 
   padding: 0.6em 0;
@@ -250,3 +250,4 @@ footer h1{
 section#places div p{
     color: white;
 }
+

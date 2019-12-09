@@ -1,5 +1,5 @@
 <?php
-  include_once('../Database/db_house.php');
+  include_once('../database/db_house.php');
   include_once('../session.php');
   $title = $_POST['title'];
   $description = $_POST['description'];

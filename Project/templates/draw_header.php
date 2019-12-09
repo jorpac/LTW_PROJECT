@@ -22,7 +22,7 @@ function draw_header($username){
         <?php } ?>
         <?php if($username!=NULL){ ?>
             <h2 id="index_login"><a href="../pages/user.php"><?=$username?></a></h2>
-            <h2 id="index_signup"><a href="../pages/logout_action.php">Logout</a></h2>
+            <h2 id="index_signup"><a href="../actions/logout_action.php">Logout</a></h2>
         <?php } ?>
         </header>
 
