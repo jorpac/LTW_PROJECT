@@ -1,4 +1,5 @@
 <?php
-    session_start();
-    $_SESSION['username'] = NULL;
+    if(!isset($_SESSION))
+        session_start();
+    //$_SESSION['username'] = NULL;
 ?>

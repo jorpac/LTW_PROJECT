@@ -1,13 +1,15 @@
 <?php
 function draw_main_page(){
-    include_once('Database/db_get_prop.php');
+    include_once('../database/db_get_prop.php');
+    include_once('../session.php');
+
     $Barcelona = getCity('Barcelona');
     $Lisbon = getCity('Lisbon');
     $Paris = getCity('Paris');
     $Amsterdam = getCity('Barcelona');
     ?>
   
-  <form method="post" action="action_search.php">
+  <form method="post" action="../actions/action_search.php">
             <input type="text" name="destination" placeholder=" Where to" required>
             <input type="date" name="check_in" placeholder="check-in" required>
             <input type="date" name="check_out" placeholder="check-out" required>
@@ -50,7 +52,10 @@ function draw_main_page(){
 function draw_user_body(){
     ?>
         <section id="Change data">
-            <h1 id= ><>
+            <h1 id= "credentials"><a href="../user/credentials.php">Edit Profile</a></h1>
+            <h1 id= "manage"><a href="../user/owner.php">Manage your places</a></h1>
+            <h2 id="statistics"><a href="../user/stats.php">Statistics</a></h2>
+        </section>
 
     <?php
 }
