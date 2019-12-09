@@ -1,7 +1,4 @@
-<?php
-function draw_header($username){
-    ?>
-    <!doctype html>
+<!doctype html>
 <html>
     <head>
         <title>Book&GO</title>
@@ -15,17 +12,23 @@ function draw_header($username){
 
     <body>     
         <header>
-        <h1><a href="../index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
-        <?php if($username == NULL) { ?>
-            <h2 id="index_login"><a href="../pages/login.php">Login</a></h2>
-            <h2 id="index_signup"><a href="../pages/signup.php">Signup</a></h2>
-        <?php } ?>
-        <?php if($username!=NULL){ ?>
-            <h2 id="index_login"><a href="../pages/user.php"><?=$username?></a></h2>
-            <h2 id="index_signup"><a href="../actions/logout_action.php">Logout</a></h2>
-        <?php } ?>
+            <h1><a href="index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
         </header>
+    </body>
 
-<?php
-}
-?>
+
+    <section id="login">
+        
+      <form method="post" action="../actions/log_action.php">
+        <input type="text" name="username" placeholder="username" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="submit" value="Login">
+      </form>
+  
+      <footer>
+        <p>Don't have an account? <a href="signup.php">Signup!</a></p>
+      </footer>
+
+    </section>
+
+</html>
