@@ -1,3 +1,3 @@
 <?php
-    header('Location: ../house/edit_house.php');
+    header('Location: ../house/add_place.php');
 ?>
