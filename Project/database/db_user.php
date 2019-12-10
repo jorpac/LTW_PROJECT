@@ -21,7 +21,7 @@
     $user = $stmt1->fetch();
     if($user != NULL)
         return false;
-    $stmt = $db->prepare('INSERT INTO user VALUES(?, ?, ?)');
+    $stmt = $db->prepare('INSERT INTO user (username, password,name) VALUES(?, ?, ?)');
     $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options), $name));
     return true;
     }
