@@ -21,3 +21,7 @@
     }
     ?>
     </section>
+<?php
+    include_once('../templates/draw_footer.php');
+    draw_footer(NULL);
+?>
