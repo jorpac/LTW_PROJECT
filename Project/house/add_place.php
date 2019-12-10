@@ -4,7 +4,7 @@ include_once('../session.php');
 draw_header($_SESSION['username']);
 ?>
     <section id="house">
-    <h1 id="newplace" style="color:white;">Add a new place here !</h1>
+    <h1 id="newplace">Add a new place here !</h1>
     
     <form method="post" action="add_house_caract.php">
         <input type="text" name="title" placeholder="Title" required>

@@ -249,8 +249,12 @@ footer h1{
 
 section#places div p{
     color: white;
-    font-family: 'McLaren', cursive;
 }
+
+section#house h1#manage_house{
+  color: var(--main-color);
+}
+
 
 #your_house{
   display:grid;

@@ -40,4 +40,12 @@
       $stmt->execute(array($password, $new_username, $username));
       
     }
+
+    function getUserID($username){
+      $db = Database::instance()->db();
+      $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
+      $stmt->execute(array($username));
+      $usr= $stmt->fetch();
+      return $usr['id'];
+    }
 ?>

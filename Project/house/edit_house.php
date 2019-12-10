@@ -2,8 +2,11 @@
 include_once('../templates/draw_header.php');
 include_once('../session.php');
 draw_header($_SESSION['username']);
-$id=$_GET['id'];
-include_once('../Database/db_house.php');
+include_once('../database/db_house.php');
+include_once('../database/db_user.php');
+
+$id=getUserID($_SESSION['username']);
+
 $place=getHouseCaract($id);
 ?>
 
