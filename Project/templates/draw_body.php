@@ -53,7 +53,7 @@ function draw_user_body(){
     ?>
         <section id="Change data">
             <h1 id= "credentials"><a href="../user/credentials.php">Edit Profile</a></h1>
-            <h1 id= "manage"><a href="../user/owner.php">Add places</a></h1>
+            <h1 id= "create"><a href="../user/owner.php">Add places</a></h1>
             <h1 id= "manage"><a href="../house/manage_places.php">Manage your places</a></h1>
             <h2 id="statistics"><a href="../user/stats.php">Statistics</a></h2>
         </section>

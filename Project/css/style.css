@@ -292,3 +292,18 @@ section#places div p{
   text-align: right;
   vertical-align: center;
 }
+
+#Change data{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50%,50%;
+}
+#credentials, #create, #manage, #statistics{
+  background-color: Black;
+  margin: 1em;
+  padding:0.5em;
+  font-family: 'McLaren', cursive;
+  border: 0.1em solid var(--main-color);
+  text-align: center;
+  vertical-align: center;
+}
