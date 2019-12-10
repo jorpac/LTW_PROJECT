@@ -5,7 +5,7 @@
         $db = Database::instance()->db();
         $stmt = $db->prepare('SELECT * FROM place WHERE id = ?');
         $stmt->execute(array($key));
-        return $stmt->fetch();
+        return $stmt->fetchAll();
     }
 
     function getHouseUsername($username){

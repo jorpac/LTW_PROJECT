@@ -10,13 +10,7 @@
   $title = $_POST['title'];
   $description = $_POST['description'];
   $price = $_POST['price'];
-  $key=0;
-  if(changeHouseCaract($title,$price,$description,$key)){
-      $message="Changes saved successfully !";
-      echo "<SCRIPT popup($message) </SCRIPT>";
-    }
-  else{
-    $message="Changes couldn't be saved";
-    echo "<SCRIPT popup($message) </SCRIPT>";
-  }
+  $key=$_POST['id'];
+  changeHouseCaract($key,$title,$price,$description);
+  header('Location: ../house/manage_places.php');
 ?>
