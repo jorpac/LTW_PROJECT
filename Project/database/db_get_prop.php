@@ -8,4 +8,13 @@
     $cnt = $stmt->fetch();
     return count($cnt);
   }
+
+  function getProp($id) {
+    $db = Database::instance()->db();
+    $stmt = $db->prepare('SELECT * FROM place WHERE id = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch();
+    
+  }
+
 ?>

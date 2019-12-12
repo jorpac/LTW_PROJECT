@@ -12,7 +12,7 @@
 
     <body>     
         <header>
-            <h1><a href="index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
+            <h1><a href="../index.php">BOOK&G<i class="fas fa-globe-africa fa-sm"></i></a></h1>
         </header>
     </body>
 

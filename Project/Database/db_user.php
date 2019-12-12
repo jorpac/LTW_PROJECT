@@ -21,7 +21,7 @@
     $user = $stmt1->fetch();
     if($user != NULL)
         return false;
-    $stmt = $db->prepare('INSERT INTO user (username, password,name) VALUES(?, ?, ?)');
+    $stmt = $db->prepare('INSERT INTO user (username, password, name) VALUES(?, ?, ?)');
     $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options), $name));
     return true;
     }
@@ -35,10 +35,16 @@
     }
 
     function updateUser($username, $new_username, $password){
+      $options = ['cost' => 12];
       $db = Database::instance()->db();
-      $stmt = $db->prepare('UDPATE user SET password=?, username=? WHERE username = ?');
-      $stmt->execute(array($password, $new_username, $username));
-      
+      $stmt1 = $db->prepare('SELECT id FROM user WHERE username = ?');
+      $stmt1->execute(array($new_username));
+      $user_id = $stmt1->fetch();
+      if($user_id != NULL)
+        return false;
+      $stmt = $db->prepare('UPDATE user SET password = ?, username= ? WHERE id = ?');
+      $stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options), $new_username, $username));
+      return true;
     }
 
     function getUserID($username){

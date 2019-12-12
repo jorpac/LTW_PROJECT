@@ -5,7 +5,7 @@
         $db = Database::instance()->db();
         $stmt = $db->prepare('SELECT * FROM place WHERE id = ?');
         $stmt->execute(array($key));
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
     function getHouseUsername($username){
@@ -24,8 +24,8 @@
 
     function addHouse($title,$price,$description,$username,$address,$city){
         $db=Database::instance()->db();
-        $stmt=$db->prepare('INSERT INTO place (title,price,description,username,address,city) VALUES (?,?,?,?,?,?)');
+        $stmt=$db->prepare("INSERT INTO place (title,price,description,username,address,city) VALUES ('?','?','?','?','?','?')");
         $stmt->execute(array($title,$price,$description,$username,$address,$city));
-        return true;
+        return $stmt;
     }
 ?>

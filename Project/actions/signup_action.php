@@ -14,7 +14,7 @@
       );
   } else {
     die(
-    header('Location: ../signup.php')
+    header('Location: ../pages/signup.php')
     );
   }
 ?>

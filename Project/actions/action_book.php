@@ -1,7 +1,7 @@
 <?php
 include_once('../templates/draw_header.php');
 include_once('../session.php');
-include_once('../Database/db_house.php');
+include_once('../database/db_house.php');
 if(isset($_SESSION['username']))
     draw_header($_SESSION['username']);
 else
@@ -11,7 +11,7 @@ $place=getHouseCaract($id);
 ?>
 
 <?php
-    include_once('../Database/db_house.php');
+    include_once('../database/db_house.php');
     $places=getHouseUsername($_SESSION['username']);
 ?>
     <div id="your_house">

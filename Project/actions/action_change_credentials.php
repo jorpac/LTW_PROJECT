@@ -14,9 +14,14 @@
     }
     
     if(getUserPass($old_name, $old_pass)){
-        updateUser($new_pass, $new_name, $old_name);
-        $_SESSION['username'] = $new_name;
-        die(header('Location: ../pages/user.php'));               
+        $id = getUserID($old_name);
+        if(updateUser($id, $new_name, $new_pass)){
+            $_SESSION['username'] = $new_name;
+            die(header('Location: ../pages/user.php'));  
+        }
+        else
+            die(header('Location: ../user/credentials.php'));  
+
     }
         die(header('Location: ../user/credentials.php'));       
     

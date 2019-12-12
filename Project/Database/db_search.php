@@ -2,6 +2,7 @@
   include_once('../includes/database.php');
 
   function getPlaces($city) {
+    $city = strtoupper($city);
     $db = Database::instance()->db();
     $stmt = $db->prepare('SELECT * FROM place WHERE city = ?');
     $stmt->execute(array($city));
