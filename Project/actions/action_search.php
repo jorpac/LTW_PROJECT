@@ -1,5 +1,7 @@
 <?php
     $city = $_POST['destination'];
+    $indate = $_POST['check_in'];
+    $outdate = $_POST['check_out'];
     include_once('../database/db_search.php');
     include_once('../templates/draw_header.php');
     include_once('../templates/draw_body.php');
@@ -11,7 +13,7 @@
     else
         draw_header(NULL);
 
-    $places = getPlaces($city);
+    $places = getPlaces($city, $indate, $outdate);
    // print($places);
    ?>
    <section id="places">

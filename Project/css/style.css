@@ -311,3 +311,9 @@ section#house h1#manage_house{
   text-align: center;
   vertical-align: center;
 }
+
+#house_full{
+  width: 90%;
+  margin: auto;
+  background-color: aliceblue;
+}

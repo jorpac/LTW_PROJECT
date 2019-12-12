@@ -16,6 +16,10 @@
         <h2 id="pri"><?=$house['price']?>€</h2>
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
+        <form action="../actions/book.php">
+            <input type="submit" value="Book"/>
+        
+        </form>
     </div>
 <?php
     }
