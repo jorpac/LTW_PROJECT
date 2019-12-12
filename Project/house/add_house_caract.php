@@ -6,6 +6,6 @@
   $price = $_POST['price'];
   $address = $_POST['address'];
   $city = $_POST['city'];
-  addHouse($title,$price,$description,$_SESSION['username'],$address,$city);
-  header('Location: ../house/manage_places.php');
+  addHouse($title,$price,$description,$_SESSION['id'],$address,$city);
+  header('Location: ../user/owner.php');
 ?>

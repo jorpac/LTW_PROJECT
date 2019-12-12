@@ -1,5 +1,6 @@
 <?php
     include_once('../includes/database.php');
+    include_once('db_user.php');
 
     function getHouseCaract($key){
         $db = Database::instance()->db();
@@ -10,8 +11,9 @@
 
     function getHouseUsername($username){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT * FROM place WHERE username = ?');
-        $stmt->execute(array($username));
+        $id = getUserId($username);
+        $stmt = $db->prepare('SELECT * FROM place WHERE idusr = ?');
+        $stmt->execute(array($id));
         return $stmt->fetchAll();
     }
     
@@ -22,10 +24,10 @@
         return $stmt;
     }
 
-    function addHouse($title,$price,$description,$username,$address,$city){
+    function addHouse($title,$price,$description,$userid,$address,$city){
         $db=Database::instance()->db();
-        $stmt=$db->prepare("INSERT INTO place (title,price,description,username,address,city) VALUES ('?','?','?','?','?','?')");
-        $stmt->execute(array($title,$price,$description,$username,$address,$city));
-        return $stmt;
+        $stmt=$db->prepare("INSERT INTO place (title,price,description,idusr,address,city) VALUES (?,?,?,?,?,?)");
+        $stmt->execute(array($title,$price,$description,$userid,$address,$city));
+        return true;
     }
 ?>
