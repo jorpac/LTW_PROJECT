@@ -1,11 +1,12 @@
 <?php
   include_once('../database/db_house.php');
   include_once('../session.php');
+  include_once('../database/db_user.php');
   $title = $_POST['title'];
   $description = $_POST['description'];
   $price = $_POST['price'];
   $address = $_POST['address'];
   $city = $_POST['city'];
-  addHouse($title,$price,$description,$_SESSION['id'],$address,$city);
+  addHouse($title,$price,$description,getUserId($_SESSION['username']),$address,$city);
   header('Location: ../user/owner.php');
 ?>
