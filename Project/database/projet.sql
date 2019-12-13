@@ -28,7 +28,7 @@ CREATE TABLE comments (
 CREATE TABLE reservation (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	idplace INTEGER REFERENCES place,
-	idusr REFERENCES user,
+	idusr INTEGER REFERENCES user,
 	checkindate DATE NOT NULL,
 	checkoutdate DATE NOT NULL
 );

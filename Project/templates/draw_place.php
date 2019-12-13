@@ -1,6 +1,6 @@
 <?php
 include_once('../database/db_house.php');
-function draw_search($place){
+function draw_search($place, $indate, $outdate){
         $img_name = getHouseImg($place['id']);
         // $image = imagecreatefromjpeg('../images/'+$img_name+'.jpg');
         // $size = min(imagesx($image), imagesy($image));
@@ -8,21 +8,21 @@ function draw_search($place){
         ?>
         <div id="your_house">
         <img id="house_img" src="../images/<?=$img_name['id']?>.jpg" alt="House"/>
-        <h1 id="tit"><a href="../pages/house.php?id=<?=$place['id']?>"><?=$place['title']?></a></h1>
+        <h1 id="tit"><a href="../pages/house.php?id=<?=$place['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>"><?=$place['title']?></a></h1>
         <h2 id="pri"><?=$place['price']?>€</h2>
         <p id="desc"><?=$place['address']?> - <?=$place['city']?></p>
     </div>
 <?php
     }
 
-    function draw_place($house){
+    function draw_place($house, $indate, $outdate){
         ?>
         <div id="house_full">
-        <h1 id="tit"><a href="../pages/house.php?id=<?=$house['id']?>"><?=$house['title']?></a></h1>
+        <h1 id="tit"><a href="../pages/house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>"><?=$house['title']?></a></h1>
         <h2 id="pri"><?=$house['price']?>€</h2>
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
-        <form action="../house/book_house.php">
+        <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>">
             <input type="submit" value="Book"/>
         
         </form>

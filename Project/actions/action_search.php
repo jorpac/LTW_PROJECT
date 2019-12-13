@@ -19,7 +19,7 @@
    <section id="places">
    <?php
     foreach ($places as $place) {
-        draw_search($place);
+        draw_search($place, $indate, $outdate);
     }
     ?>
     </section>
