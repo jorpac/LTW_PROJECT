@@ -17,10 +17,10 @@
         return $stmt->fetchAll();
     }
     
-    function changeHouseCaract($key,$title, $price,$description) {
+    function changeHouseCaract($id,$title, $price,$description) {
         $db =Database::instance()->db();
-        $stmt = $db->prepare('UPDATE place SET title = ? AND price = ? AND description = ? where id = ? ');
-        $stmt->execute(array($title,$price,$description,$key));
+        $stmt = $db->prepare('UPDATE place SET title = ?, price = ?, description = ? WHERE id = ? ');
+        $stmt->execute(array($title,$price,$description,$id));
         return $stmt;
     }
 

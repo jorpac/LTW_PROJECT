@@ -10,7 +10,7 @@
   $title = $_POST['title'];
   $description = $_POST['description'];
   $price = $_POST['price'];
-  $key=$_POST['id'];
-  changeHouseCaract($key,$title,$price,$description);
-  header('Location: ../house/manage_places.php');
+  $id=$_POST['id'];
+  changeHouseCaract($id,$title,$price,$description);
+  header('Location: ../user/owner.php');
 ?>

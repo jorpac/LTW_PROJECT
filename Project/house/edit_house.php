@@ -6,8 +6,8 @@ include_once('../database/db_house.php');
 include_once('../database/db_user.php');
 
 $id=getUserID($_SESSION['username']);
-
-$place=getHouseCaract($id);
+$placeid=$_GET['id'];
+$place=getHouseCaract($placeid);
 ?>
 
     <section id="house">
@@ -15,9 +15,9 @@ $place=getHouseCaract($id);
     <form method="post" action="edit_house_caract.php">
         <input type="text" name="title" placeholder=<?=$place['title']?> required>
         <input type="text" name="description" placeholder=<?=$place['description']?> required>
-        <input type="range" id="rangeInput" min="0" max="2000" step="10" name="price" value=<?=$place['price']?> required oninput="cost.value=rangeInput.value">
+        <input type="range" id="rangeInput" min="0" max="2000" step="10" value=<?=$place['price']?> required oninput="cost.value=rangeInput.value">
         <input type="text" id="cost" name="price" placeholder=<?=$place['price']?> for="rangeInput">
-        <input type="hidden" id="id" value=<?=$id?>>
+        <input type="hidden" id="id" name="id" value=<?=$placeid?>>
         <input type="submit" value="Save changes">
     </form>
     </section>
