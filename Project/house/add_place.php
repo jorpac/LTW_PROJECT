@@ -8,8 +8,10 @@ draw_header($_SESSION['username']);
     
     <form method="post" action="add_house_caract.php">
         <input type="text" name="title" placeholder="Title" required>
+        <input type="file" id="image" hidden="hidden"/>
+        <button type = "button" id="img_button">CHOOSE A FILE </button>
         <input type="text" name="description" placeholder="Description" required>
-        <input type="range" id="rangeInput" min="0" max="2000" step="10" name="price" value="1000" required oninput="cost.value=rangeInput.value">
+        <input type="range" id="rangeInput" min="50" max="2000" step="10" name="price" value="1000" required oninput="cost.value=rangeInput.value">
         <input type="text" id="cost" name="price" placeholder="Price : 1000" for="rangeInput">
         <input type="text" name="address" placeholder="Address" required>
         <input type="text" name="city" placeholder="City" required>

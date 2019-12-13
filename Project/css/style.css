@@ -108,6 +108,13 @@ input[type="submit"]{
   text-align: center;
 }
 
+/* 
+input[type="file"]{
+
+
+
+
+} */
 body > form{
   width: 45%;
   margin: auto;
@@ -258,32 +265,46 @@ section#house h1#manage_house{
 
 #your_house{
   display:grid;
+  grid-template-columns: 30% 50% 20%;
+  grid-template-rows: 7em 7em;
+
   color: white;
   padding-left:1em;
   padding-right: 1em;
   padding-top:5px;
+  padding-bottom:5px;
   background-color: black;
   margin: 1em;
   font-family: 'McLaren', cursive;
   border: 0.1em solid var(--main-color);
 }
+
+#your_house #house_img{
+  width:100%;
+  height:100%;
+  display: flex;
+  padding-bottom: 1em;
+  
+}
+
 #your_house #tit{
+  text-indent: 1em;
   text-transform: uppercase;
-  grid-column-start: 1;
+  grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
 }
 #your_house #pri{
-  grid-column-start: 5;
+  grid-column-start: 3;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 2;
   text-align: right;
 }
 #your_house #desc{
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
   text-align: left;

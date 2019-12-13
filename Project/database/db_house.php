@@ -9,6 +9,13 @@
         return $stmt->fetch();
     }
 
+    function getHouseImg($idplace){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('SELECT id FROM img WHERE idplace = ?');
+        $stmt->execute(array($idplace));
+        return $stmt->fetch();
+    }
+
     function getHouseUsername($username){
         $db = Database::instance()->db();
         $id = getUserId($username);
@@ -16,6 +23,7 @@
         $stmt->execute(array($id));
         return $stmt->fetchAll();
     }
+    
     
     function changeHouseCaract($id,$title, $price,$description) {
         $db =Database::instance()->db();
@@ -28,6 +36,7 @@
         $db=Database::instance()->db();
         $stmt=$db->prepare("INSERT INTO place (title,price,description,idusr,address,city) VALUES (?,?,?,?,?,?)");
         $stmt->execute(array($title,$price,$description,$userid,$address,$city));
-        return true;
+        return $stmt;
     }
+
 ?>

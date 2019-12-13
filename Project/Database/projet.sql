@@ -33,6 +33,11 @@ CREATE TABLE reservation (
 	checkoutdate DATE NOT NULL
 );
 
+CREATE TABLE img (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	idplace INTEGER REFERENCES place
+);
+
 INSERT INTO user VALUES( 1, "simon-tlc",'$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG',"Simon Tollec");
 INSERT INTO user VALUES( 2, "anthony",'$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG',"Anthony");
 INSERT INTO user VALUES (3, 'john', '$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG', 'John');
@@ -58,3 +63,8 @@ INSERT INTO reservation VALUES(5, 3, 3, '2019-12-22', '2019-12-25');
 INSERT INTO reservation VALUES(6, 4, 1, '2020-01-01', '2020-01-05');
 INSERT INTO reservation VALUES(7, 4, 2, '2020-01-01', '2020-01-05');
 INSERT INTO reservation VALUES(8, 2, 1, '2019-12-15', '2019-12-17');
+
+INSERT INTO img VALUES(1, 1);
+INSERT INTO img VALUES(4, 2);
+INSERT INTO img VALUES(2, 3);
+INSERT INTO img VALUES(3, 4);
