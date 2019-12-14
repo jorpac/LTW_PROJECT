@@ -10,7 +10,13 @@ $id = $_GET['id'];
 $indate = $_GET['indate'];
 $outdate = $_GET['outdate'];
 
-book($id, $_SESSION['username'], $indate, $outdate);
+if(book($id, $_SESSION['username'], $indate, $outdate)){
+    die(header('Location: ../book/confim_book.php'));
+}
+else{
+    die(header('Location: ../index.php'));
+
+}
 }
 
 ?>

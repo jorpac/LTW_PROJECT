@@ -38,7 +38,6 @@
         $stmt->execute(array($title,$price,$description,$userid,$address,$city));
         return $stmt;
     }
-
     function searchHouseReserved($username){
         $id = getUserId($username);
         $db = Database::instance()->db();

@@ -38,7 +38,7 @@ function draw_search($place, $indate, $outdate){
         <h2 id="pri"><?=$place['price']?>€</h2>
         <p id="desc"><?=$place['address']?> - <?=$place['city']?></p>
         <!-- <p id="desc"><?=$place['description']?></p>
-        <p id="link"><a href="../house/edit_house.php?id=<?=$place['id']?>">Modify</a></p>-->
+        <p id="link"><a href="../house/edit_house.php?id=<?=$place['id']?>">Modify</a></p> -->
     </div>
 <?php
     }
