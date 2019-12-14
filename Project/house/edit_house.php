@@ -13,8 +13,8 @@ $place=getHouseCaract($placeid);
     <section id="house">
     <h1 style="color:white">Modify the caracteristics of your place ! </h1>
     <form method="post" action="edit_house_caract.php">
-        <input type="text" name="title" placeholder=<?=$place['title']?> required>
-        <input type="text" name="description" placeholder=<?=$place['description']?> required>
+        <input type="text" name="title" placeholder="<?=$place['title']?>" required>
+        <input type="text" name="description" placeholder="<?=$place['description']?>" required>
         <input type="range" id="rangeInput" min="0" max="2000" step="10" value=<?=$place['price']?> required oninput="cost.value=rangeInput.value">
         <input type="text" id="cost" name="price" placeholder=<?=$place['price']?> for="rangeInput">
         <input type="hidden" id="id" name="id" value=<?=$placeid?>>
