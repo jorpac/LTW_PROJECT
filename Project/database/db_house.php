@@ -39,12 +39,4 @@
         return $stmt;
     }
 
-    function searchHouseReserved($username){
-        $id = getUserId($username);
-        $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT * FROM reservation join place on reservation.idplace=place.id WHERE reservation.idusr = ?');
-        $stmt->execute(array($id));
-        return $stmt->fetchAll();
-    }
-
 ?>
