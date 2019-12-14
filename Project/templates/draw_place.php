@@ -42,5 +42,14 @@ function draw_search($place, $indate, $outdate){
     </div>
 <?php
     }
-
+    function draw_place_reserved($house){
+        ?>
+    <div id="house_full">
+        <h1 id="tit"><?=$house['title']?></h1>
+        <h2 id="pri"><?=$house['price']?>€</h2>
+        <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
+        <p id="desc"><?=$house['address']?> - <?=$house['city']?> from <?=$house['checkindate']?> to <?=$house['checkoutdate']?></p>
+    </div>
+<?php
+    }
 ?>
