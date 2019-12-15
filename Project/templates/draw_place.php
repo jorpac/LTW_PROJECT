@@ -35,9 +35,10 @@ function draw_search($place, $indate, $outdate){
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
         <p id="comment"><a href="../house/add_comment.php?id=<?=$house['id']?>">Add a comment</a></p>
         <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>">
-            <input type="submit" value="Book"/>        
-        </form>
+            <input type="submit" value="Book"/>
         
+        </form>
+               
 <?php
     $comments=getComments($house['id']);
     foreach($comments as $comment){

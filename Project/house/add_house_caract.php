@@ -7,6 +7,7 @@
   $price = $_POST['price'];
   $address = $_POST['address'];
   $city = $_POST['city'];
+  
   addHouse($title,$price,$description,getUserID($_SESSION['username']),$address,$city);
   header('Location: ../user/owner.php');
 ?>
