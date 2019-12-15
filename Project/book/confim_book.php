@@ -4,6 +4,7 @@
     draw_header($_SESSION['username']);
     ?>
     <h1><?=$_SESSION['username']?> reservation confrimed!</h1>
+    <h2>Redirecting in 5 seconds</h2>
     <?php
 ?>
 <script>

@@ -31,8 +31,11 @@ function draw_search($place, $indate, $outdate){
     }
 
     function draw_manage($place){
+        $img_name = getHouseImg($place['id']);
         ?>
         <div id="your_house">
+        <img id="house_img" src="../images/<?=$img_name['id']?>.jpg" alt="House"/>
+            
         <!-- <h1 id="tit"><?=$place['title']?></h1> -->
         <h1 id="tit"><a href="../house/edit_house.php?id=<?=$place['id']?>"><?=$place['title']?></a></h1>
         <h2 id="pri"><?=$place['price']?>€</h2>
@@ -49,6 +52,9 @@ function draw_search($place, $indate, $outdate){
         <h2 id="pri"><?=$house['price']?>€</h2>
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?> from <?=$house['checkindate']?> to <?=$house['checkoutdate']?></p>
+        <form action="../house/cancel_book.php?id=<?=$house['id']?>&indate=<?=$house['checkindate']?>&outdate=<?=$house['checkoutdate']?>" method="post">
+        <input type="submit" value="Cancel reservation"/>    
+    </form>
     </div>
 <?php
     }
