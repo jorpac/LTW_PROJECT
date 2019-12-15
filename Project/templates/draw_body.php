@@ -54,9 +54,9 @@ function draw_user_body(){
         <section id="Change data">
             <h1 id= "credentials"><a href="../user/credentials.php">Edit Profile</a></h1>
             <h1 id= "manage"><a href="../house/add_place.php">Add places</a></h1>
-            <h1 id= "manage"><a href="../user/owner.php">Manage your places</a></h1>
+            <h1 id= "manage"><a href="../user/owner.php">Manage my places</a></h1>
             <h2 id="statistics"><a href="../user/stats.php">Statistics</a></h2>
-            <h1 id="manage"><a href="../user/reservations.php">Your reservations</a></h1>
+            <h1 id="manage"><a href="../user/reservations.php">My reservations</a></h1>
         </section>
 
     <?php
