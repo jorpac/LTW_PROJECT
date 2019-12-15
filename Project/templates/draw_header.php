@@ -1,4 +1,5 @@
 <?php
+    include_once('../session.php');
 function draw_header($username){
     ?>
     <!doctype html>
@@ -26,6 +27,13 @@ function draw_header($username){
             <h2 id="index_signup"><a href="../actions/logout_action.php">Logout</a></h2>
         <?php } ?>
         </header>
+        <?php if (isset($_SESSION['messages'])) {?>
+        <section id="messages">
+          <?php foreach($_SESSION['messages'] as $message) { ?>
+            <div class="<?=$message['type']?>"><?=$message['content']?></div>
+          <?php } ?>
+        </section>
+      <?php unset($_SESSION['messages']); } ?>
 
 <?php
 }

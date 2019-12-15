@@ -9,13 +9,12 @@ function draw_main_page(){
     $Amsterdam = getCity('Barcelona');
     ?>
   
-  <form method="post" action="../actions/action_search.php">
+  <form id= search_bar method="post" action="../actions/action_search.php">
             <input type="text" name="destination" placeholder=" Where to" required>
             <input type="date" name="check_in" placeholder="check-in" required>
             <input type="date" name="check_out" placeholder="check-out" required>
             <input type="submit" value="Search">
       </form>
-
 
         <section id = "Top_places">
 

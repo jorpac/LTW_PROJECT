@@ -2,6 +2,13 @@
     $city = $_POST['destination'];
     $indate = $_POST['check_in'];
     $outdate = $_POST['check_out'];
+    $now_date = date("Y-m-d");
+    // print_r($indate);
+    if($indate < $now_date)
+        die(header('Location: ../index.php'));
+    else if($outdate < $indate)
+    die(header('Location: ../index.php'));
+    else{
     include_once('../database/db_search.php');
     include_once('../templates/draw_header.php');
     include_once('../templates/draw_body.php');
@@ -26,4 +33,5 @@
 <?php
     include_once('../templates/draw_footer.php');
     draw_footer(NULL);
+}
 ?>

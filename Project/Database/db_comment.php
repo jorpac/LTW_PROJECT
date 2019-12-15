@@ -9,7 +9,7 @@
         return $stmt->fetchAll();
     }
 
-    function addComment($title,$description,$mark,$userid,$houseid){
+    function addComment($userid,$houseid,$title,$description,$mark){
         $db=Database::instance()->db();
         $stmt=$db->prepare("INSERT INTO comments (idusr,idplace,title,description,mark) VALUES (?,?,?,?,?)");
         $stmt->execute(array($userid,$houseid,$title,$description,$mark));

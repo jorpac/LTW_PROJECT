@@ -7,6 +7,6 @@
   $description = $_POST['description'];
   $mark = $_POST['mark'];
   $houseid=$_POST['id'];
-  addComment($title,$description,$mark,getUserID($_SESSION['username']),$houseid);
-  header('Location: ../pages/main.php');
+  addComment(getUserID($_SESSION['username']),$houseid, $title,$description,$mark);
+  header('Location: ../index.php');
 ?>

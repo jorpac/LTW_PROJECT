@@ -2,6 +2,7 @@
 include_once('../database/db_house.php');
 include_once('../database/db_user.php');
 include_once('../database/db_comment.php');
+include_once('../session.php');
 function draw_search($place, $indate, $outdate){
         $img_name = getHouseImg($place['id']);
         // $image = imagecreatefromjpeg('../images/'+$img_name+'.jpg');
@@ -34,7 +35,7 @@ function draw_search($place, $indate, $outdate){
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
         <p id="comment"><a href="../house/add_comment.php?id=<?=$house['id']?>">Add a comment</a></p>
-        <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>">
+        <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>&csrf=<?=$_SESSION['csrf']?>">
             <input type="submit" value="Book"/>
         
         </form>

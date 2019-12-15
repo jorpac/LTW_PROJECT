@@ -38,6 +38,13 @@ CREATE TABLE img (
 	idplace INTEGER REFERENCES place
 );
 
+CREATE TABLE favourite (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	idplace INTEGER REFERENCES place,
+	idusr INTEGER REFERENCES user
+);
+
+
 INSERT INTO user VALUES( 1, "simon-tlc",'$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG',"Simon Tollec");
 INSERT INTO user VALUES( 2, "anthony",'$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG',"Anthony");
 INSERT INTO user VALUES (3, 'john', '$2y$12$cH5Hmh/4JgKSEM4ZCih1jOOSItL2WW.XZruOxkG0udohjH5xMu6FG', 'John');
@@ -68,3 +75,7 @@ INSERT INTO img VALUES(1, 1);
 INSERT INTO img VALUES(4, 2);
 INSERT INTO img VALUES(2, 3);
 INSERT INTO img VALUES(3, 4);
+
+INSERT INTO comments VALUES(0, 1, 2, "Great Stay!", "Loved everything, from hospitality to price!", 10);
+
+INSERT INTO favourite VALUES(0, 1, 1);
