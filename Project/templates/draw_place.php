@@ -9,6 +9,7 @@ function draw_search($place, $indate, $outdate){
         // $size = min(imagesx($image), imagesy($image));
         // $im2 = imagecrop($im, ['x' => 0, 'y' => 0, 'width' => $size, 'height' => $size]);
         ?>
+        
         <div id="your_house">
         <img id="house_img" src="../images/<?=$img_name['id']?>.jpg" alt="House"/>
         <h1 id="tit"><a href="../pages/house.php?id=<?=$place['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>"><?=$place['title']?></a></h1>
@@ -35,10 +36,14 @@ function draw_search($place, $indate, $outdate){
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
         <p id="comment"><a href="../house/add_comment.php?id=<?=$house['id']?>">Add a comment</a></p>
-        <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>&csrf=<?=$_SESSION['csrf']?>">
-            <input type="submit" value="Book"/>
+        <form method="POST" action="../house/add_fav.php?id=<?=$house['id']?>">
+            <input type="submit" value="Add to favourites"/>
         
         </form>
+        <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>&csrf=<?=$_SESSION['csrf']?>">
+            <input type="submit" value="Book"/>
+        </form>
+        
                
 <?php
     $comments=getComments($house['id']);

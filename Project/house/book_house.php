@@ -6,22 +6,22 @@ if(!isset($_SESSION['username'])){
     die(header('Location: ../pages/login.php'));
 }
 else{
-$id = $_GET['id'];
-$indate = $_GET['indate'];
-$outdate = $_GET['outdate'];
+    $id = $_GET['id'];
+    $indate = $_GET['indate'];
+    $outdate = $_GET['outdate'];
 
-if ($_SESSION['csrf'] != $_GET['csrf']) {
-    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid request!');
-    die(header('Location: ../pages/list.php'));
-  }
+    if ($_SESSION['csrf'] != $_GET['csrf']) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid request!');
+        die(header('Location: ../pages/list.php'));
+      }
 
-if(book($id, $_SESSION['username'], $indate, $outdate)){
-    die(header('Location: ../book/confim_book.php'));
-}
-else{
-    die(header('Location: ../index.php'));
+    if(book($id, $_SESSION['username'], $indate, $outdate)){
+        die(header('Location: ../book/confim_book.php'));
+    }
+    else{
+        die(header('Location: ../index.php'));
 
-}
+    }
 }
 
 ?>

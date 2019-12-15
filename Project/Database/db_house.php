@@ -39,6 +39,15 @@
         insert_img($db->lastInsertId());
         return $stmt;
     }
+
+    function addToFav($idplace, $userid){
+        $db=Database::instance()->db();
+        $stmt=$db->prepare("INSERT INTO favourite (idplace, idusr) VALUES (?,?)");
+        $stmt->execute(array($idplace, $userid));
+        return $stmt;
+    }
+
+
     function searchHouseReserved($username){
         $id = getUserId($username);
         $db = Database::instance()->db();

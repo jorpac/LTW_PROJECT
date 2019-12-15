@@ -16,10 +16,12 @@ body {
   
     background-color: var(--bg-color);
     /* background-image: url("http://pureimg.com/public/uploads/large/241499098567zskatohcn7huh6yqgxesbq03encbxntys2shocuahw8yvfro7cswve2diootfpougxzz49ihdtjrzkqolhkc1vxtysqnj7kexdia.jpg")   ; */
-    background-image: url("https://images.wallpaperscraft.com/image/night_city_top_view_city_lights_119636_3840x2160.jpg")   ;
+    background-image: url("../images/back.jpg")   ;
     background-size: cover;
-  }
+    overflow-x: hidden;
 
+  }
+  
   
 a {
     color: var(--main-color);
@@ -347,4 +349,37 @@ section#house h1#manage_house{
   width: 90%;
   margin: auto;
   background-color: aliceblue;
+}
+
+
+.fav {
+
+  text-align: right;
+  /* position: relative; */
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.fav h2#favs_icon{
+  text-align: right;
+  font-family: var(--serif-font);
+}
+
+.fav .favour{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.fav:hover .favour{
+  visibility: visible;
 }

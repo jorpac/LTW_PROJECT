@@ -24,6 +24,10 @@
    // print($places);
    ?>
    <section id="places">
+   <div class="fav">
+        <h2 id="favs_icon"><a href="../pages/fav.php?check_in=<?=$indate?>&check_out=<?=$outdate?>"><i class="fas fa-star"></i></a></h2>
+        <span class="favour">My Favourites</span>    
+    </div>
    <?php
     foreach ($places as $place) {
         draw_search($place, $indate, $outdate);

@@ -26,7 +26,7 @@
     $places = $stmt->fetchAll(); 
     foreach ($places as $key=>$place) {
       $stmt1 = $db->prepare('SELECT * FROM reservation WHERE idplace = ? and ((julianday(?) >= julianday(checkindate) and julianday(?) <= julianday(checkoutdate)) or (julianday(?) <= julianday(checkoutdate) and julianday(?) >= julianday(checkindate)))');
-      $stmt1->execute(array($place['place.id'], $indate, $indate, $outdate, $outdate));
+      $stmt1->execute(array($place['id'], $indate, $indate, $outdate, $outdate));
       $books = $stmt1->fetchAll(); 
       if($books != NULL)
         unset($places[$key]);
