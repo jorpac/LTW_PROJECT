@@ -3,7 +3,7 @@
     include_once('../templates/draw_header.php');
     draw_header($_SESSION['username']);
     ?>
-    <h1 style="color:white"><?=$_SESSION['username']?> reservation confrimed!</h1>
+    <h1 style="color:white"><?=$_SESSION['username']?> reservation confirmed!</h1>
     <h2 style="color:white">Redirecting in 5 seconds</h2>
     <?php
 ?>
