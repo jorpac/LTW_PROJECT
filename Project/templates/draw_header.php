@@ -11,6 +11,7 @@ function draw_header($username){
         <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+        <!-- <script src="../js/script.js" defer></script> -->
     </head>
 
     <body>     

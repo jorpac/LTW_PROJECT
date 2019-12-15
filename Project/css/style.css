@@ -108,13 +108,22 @@ input[type="submit"]{
   text-align: center;
 }
 
-/* 
+
 input[type="file"]{
+    display:none;
+    /* text-align: center; */
+}
+.custom-file-upload {
+  /* border: 1px solid #ccc; */
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  font-family: var(--serif-font);
+  text-align: center;
+  margin-left: 45%;
+}
 
-
-
-
-} */
 body > form{
   width: 45%;
   margin: auto;
@@ -222,6 +231,7 @@ p{
   text-align: center;
   width:20%;
   align-content: center;
+  margin-left: 40%;
 }
 
 footer{
