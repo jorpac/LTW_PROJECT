@@ -33,6 +33,7 @@
     }
 
     function addHouse($title,$price,$description,$userid,$address,$city){
+        $city = strtoupper($city);
         $db=Database::instance()->db();
         $stmt=$db->prepare("INSERT INTO place (title,price,description,idusr,address,city) VALUES (?,?,?,?,?,?)");
         $stmt->execute(array($title,$price,$description,$userid,$address,$city));

@@ -19,7 +19,7 @@ CREATE TABLE place (
 CREATE TABLE comments (
 	id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 	idusr INTEGER REFERENCES user,
-	idplace INTEGER REFERENCES places,
+	idplace INTEGER REFERENCES place,
 	title VARCHAR NOT NULL,
 	description VARCHAR,
 	mark INTEGER CHECK(mark<11 and mark>0)

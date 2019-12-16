@@ -2,11 +2,14 @@
     include_once('../includes/database.php');
     
   function getCity($city) {
+    $city = strtoupper($city);
     $db = Database::instance()->db();
     $stmt = $db->prepare('SELECT COUNT(*) FROM place WHERE city = ?');
     $stmt->execute(array($city));
-    $cnt = $stmt->fetch();
-    return count($cnt);
+    //$cnt = $stmt->fetch();
+    $cnt1 = $stmt->fetchColumn();
+    print_r($cnt1);
+    return $cnt1;
   }
 
   function getProp($id) {

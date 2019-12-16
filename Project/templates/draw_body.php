@@ -6,7 +6,7 @@ function draw_main_page(){
     $Barcelona = getCity('Barcelona');
     $Lisbon = getCity('Lisbon');
     $Paris = getCity('Paris');
-    $Amsterdam = getCity('Barcelona');
+    $Amsterdam = getCity('Amsterdam');
     ?>
   
   <form id= search_bar method="post" action="../actions/action_search.php">
@@ -27,7 +27,7 @@ function draw_main_page(){
         <div id="Paris">
             <img src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/newsletter/eiffel-tower-in-paris-151-medium.jpg?1564742900" alt="Paris Eifell tower view">
             <p>Paris</p>
-            <p>x properties available</p>
+            <p><?=$Paris?> properties available</p>
         </div>
 
         <div id = "Amsterdam">
