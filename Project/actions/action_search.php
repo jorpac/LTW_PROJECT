@@ -1,5 +1,14 @@
 <?php
+    include_once('../session.php');
+
     $city = $_POST['destination'];
+
+    // Don't allow certain characters
+  if ( !preg_match ("/^[a-zA-Z0-9]+$/", $city)) {
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Destination can only contain letters and numbers!');
+    die(header('Location: ../index.php'));
+  }
+  else{
     $indate = $_POST['check_in'];
     $outdate = $_POST['check_out'];
     $now_date = date("Y-m-d");
@@ -12,7 +21,6 @@
     include_once('../database/db_search.php');
     include_once('../templates/draw_header.php');
     include_once('../templates/draw_body.php');
-    include_once('../session.php');
     include_once('../templates/draw_place.php');
 
     if(isset($_SESSION['username']))
@@ -38,4 +46,5 @@
     include_once('../templates/draw_footer.php');
     draw_footer(NULL);
 }
+  }
 ?>

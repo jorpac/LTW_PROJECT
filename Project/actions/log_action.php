@@ -6,6 +6,12 @@
   include_once('../templates/draw_footer.php');
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  // Don't allow certain characters
+  if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters and numbers!');
+    die(header('Location: ../pages/login.php'));
+  }
   if (logUser($username, $password)) {
     $_SESSION['username'] = $username;
     draw_header($username);

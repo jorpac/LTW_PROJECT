@@ -8,7 +8,6 @@
     $stmt->execute(array($city));
     //$cnt = $stmt->fetch();
     $cnt1 = $stmt->fetchColumn();
-    print_r($cnt1);
     return $cnt1;
   }
 
