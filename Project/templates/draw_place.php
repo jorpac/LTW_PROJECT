@@ -35,7 +35,8 @@ function draw_search($place, $indate, $outdate){
         <h2 id="pri"><?=$house['price']?>€</h2>
         <p id="desc"><?=$house['description']?> - <?=$house['city']?></p>
         <p id="desc"><?=$house['address']?> - <?=$house['city']?></p>
-        <p id="comment"><a href="../house/add_comment.php?id=<?=$house['id']?>">Add a comment</a></p>
+        <p id="view_comment"><a href="#">View comments</a></p>
+        <p id="add_comment"><a href="../house/add_comment.php?id=<?=$house['id']?>">Add a comment</a></p>
         <form method="POST" action="../house/add_fav.php?id=<?=$house['id']?>">
             <input type="submit" value="Add to favourites"/>
         
@@ -43,14 +44,52 @@ function draw_search($place, $indate, $outdate){
         <form method="POST" action="../house/book_house.php?id=<?=$house['id']?>&indate=<?=$indate?>&outdate=<?=$outdate?>&csrf=<?=$_SESSION['csrf']?>">
             <input type="submit" value="Book"/>
         </form>
+        <div id="comment">
+
+        </div>
+    <script>
+        'use strict'
+        let com = document.getElementById("view_comment");
+        let com_id = "<?php echo $house['id']?>";
+        console.log(com_id);
+        com.addEventListener("click", viewcom);
+
+        function viewcom(event) {
+            console.log(event);
+            let request = new XMLHttpRequest();
+            request.addEventListener("load", commentsReceived);
+            request.open("get", "../actions/action_get_comment.php?id=" + com_id, true);
+            request.send();
+        }
+        // Handler for ajax response received
+        function commentsReceived() {
+            console.log(JSON.parse(this.responseText));
+          let comments = JSON.parse(this.responseText);
+          let list = document.getElementById("comment");
+          list.innerHTML = ""; // Clean current comments
         
-               
-<?php
+         // Add new COMMENTS
+          for (var i=0; i < comments.length; i++) {
+            let item = document.createElement("h1");
+            item.innerHTML = comments[i].title;
+            list.appendChild(item);
+            let item2 = document.createElement("h2");
+            item2.setAttribute("id", "mark");
+            item2.innerHTML = comments[i].mark + "/10";
+            list.appendChild(item2);
+            let item3 = document.createElement("p");
+            item3.innerHTML = comments[i].description;
+            item2.setAttribute("style", "font-size:2em");
+            list.appendChild(item3);
+          }
+        }
+    </script>
+<!-- <?php
     $comments=getComments($house['id']);
     foreach($comments as $comment){
         draw_comment($comment);
     }
-?>
+?> -->
     
     </div>
 <?php
